@@ -1,0 +1,6 @@
+qview
+wlogout
+
+
+dislocker
+#— инструмент для монтирования дисков с шифрованием BitLocker.

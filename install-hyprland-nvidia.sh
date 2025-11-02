@@ -16,20 +16,10 @@ echo "Обновление базы данных пакетов и систем�
 pacman -Syyu --noconfirm
 
 # Пакеты драйверов NVIDIA
-NVIDIA_DRIVER_PACKAGE="nvidia-dkms"
-NVIDIA_UTILS_PACKAGE="nvidia-utils"
-LIB32_NVIDIA_UTILS_PACKAGE="lib32-nvidia-utils"
+echo "Установка основных пакетов, драйверов"
+pacman -S --noconfirm nvidia-dkms linux-zen-headers nvidia-utils  lib32-nvidia-utils egl-wayland libva-nvidia-driver
 
-echo "Установка основных пакетов, драйверов, Hyprland и утилит..."
-pacman -S --noconfirm base base-devel linux-zen linux-zen-headers intel-ucode \
-  $NVIDIA_DRIVER_PACKAGE $NVIDIA_UTILS_PACKAGE $LIB32_NVIDIA_UTILS_PACKAGE nvidia-settings \
-  networkmanager iwd wpa_supplicant networkmanager-applet \
-  pipewire wireplumber alsa-utils pipewire-pulse pipewire-alsa \
-  hyprland waybar wofi wl-clipboard grim slurp kitty mako \
-  xdg-utils xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-hyprland \
-  polkit polkit-gnome brightnessctl dislocker usb_modeswitch yay egl-wayland libva-nvidia-driver
 
-sudo pacman -S --noconfirm thunar thunar-volman thunar-archive-plugin thunar-media-tags-plugin gvfs tumbler catfish
 
 echo "Настройка modeset для NVIDIA..."
 echo 'options nvidia_drm modeset=1' > /etc/modprobe.d/nvidia.conf
