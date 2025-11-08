@@ -33,7 +33,7 @@ hyprland
 #— динамичный тайловый композитор Wayland, оконный менеджер для Wayland.
 waybar
 #— настраиваемая панель состояния для композиторов Wayland.
-wofi
+hyprlauncher
 #— меню и лаунчер приложений для Wayland, аналог dmenu/rofi.
 wl-clipboard
 #- командные утилиты для управления буфером обмена в Wayland.
@@ -57,7 +57,7 @@ polkit
 #— служба для централизованного управления правами доступа и привилегиями в системе.
 polkit-gnome
 #— агент аутентификации для polkit в окружении GNOME.
-brightnessctl
+# brightnessctl
 #— утилита командной строки для управления яркостью подсветки экрана.
 
 usb_modeswitch
@@ -67,7 +67,12 @@ egl-wayland
 libva-nvidia-driver
 #— драйвер VA-API для аппаратного ускорения видеодекодирования на видеокартах NVIDIA.
 pavucontrol
-
+ttf-jetbrains-mono-nerd
+hyprlock
+nwg-look
+qt6ct
+fzf
+python-pywal
 code
 xdg-user-dirs
 otf-font-awesome
@@ -95,3 +100,5 @@ fastfetch
 # xdg-user-dirs-update
 # chsh -s /usr/bin/fish
 # set -U fish_greeting
+# sudo gpasswd -a $USER video
+# sudo usermod -aG input $USER

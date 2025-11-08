@@ -1,4 +1,4 @@
-theme = "dark_high_contrast"
+theme = "gruvbox_dark_hard"
 
 [editor]
 line-number = "relative"
