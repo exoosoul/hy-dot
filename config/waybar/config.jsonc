@@ -7,10 +7,7 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/mode",
-        "hyprland/scratchpad",
-        "custom/media"
+        "hyprland/workspaces"
     ],
     "modules-center": [
         "hyprland/window"
@@ -18,8 +15,8 @@
     "modules-right": [
         "mpd",
         "idle_inhibitor",
-        "pulseaudio",
-        "pulseaudio-microphone",
+        "wireplumber",
+        "wireplumber#source",
         "network",
         "power-profiles-daemon",
         "cpu",
@@ -34,23 +31,110 @@
         "tray",
         "custom/power"
     ],
-    // Modules configuration
-    // "hyprland/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+   
+
+"hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "sort-by-number": true,
+    "show-special": false,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "persistent-workspaces": {
+    	"*": 5
+      },
+    "format": "{icon} {windows}",
+    "format-window-separator": " ",
+    "window-rewrite-default": " ",
+    "window-rewrite": {		
+	    "title<.*amazon.*>": " ",
+	    //"title<.*reddit.*>": " ",
+	    "class<firefox|org.mozilla.firefox|librewolf|floorp|mercury-browser|[Cc]achy-browser>": " ",
+	    "class<zen>": "󰰷 ",
+	    "class<waterfox|waterfox-bin>": " ",
+	    "class<microsoft-edge>": " ",
+	    "class<Chromium|Thorium|[Cc]hrome>": " ",
+	    "class<brave-browser>": "🦁 ",
+	    "class<tor browser>": " ",
+	    "class<firefox-developer-edition>": "🦊 ",
+	    "class<kitty|konsole>": " ",
+	    "class<kitty-dropterm>": " ",
+	    "class<com.mitchellh.ghostty>": " ",
+	    "class<org.wezfurlong.wezterm>": " ",
+	    "class<[Tt]hunderbird|[Tt]hunderbird-esr>": " ",
+	    "class<eu.betterbird.Betterbird>": " ",
+	    "title<.*gmail.*>": "󰊫 ",
+	    "class<[Tt]elegram-desktop|org.telegram.desktop|io.github.tdesktop_x64.TDesktop>": " ",
+	    "class<discord|[Ww]ebcord|Vesktop>": " ",
+	    "title<.*whatsapp.*>": " ",
+        "title<.*zapzap.*>": " ",
+	    "title<.*messenger.*>": " ",
+	    "title<.*facebook.*>": " ",
+	    "title<.*reddit.*>": " ",
+	    "title<.*ChatGPT.*>": "󰚩 ",
+	    "title<.*deepseek.*>": "󰚩 ",
+	    "title<.*qwen.*>": "󰚩 ",
+	    "class<subl>": "󰅳 ",
+	    "class<slack>": " ",
+	    "class<mpv>": " ",
+	    "class<celluloid|Zoom>": " ",
+	    "class<Cider>": "󰎆 ",
+	    "title<.*Picture-in-Picture.*>": " ",
+	    "title<.*youtube.*>": " ",
+	    "class<vlc>": "󰕼 ",
+	    "title<.*cmus.*>": " ",
+	    "class<[Ss]potify>": " ",
+        
+	    "class<virt-manager>": " ",
+	    "class<.virt-manager-wrapped>": " ",
+	    "class<virtualbox manager>": "💽 ",
+	    "title<virtualbox>": "💽 ",
+	    "class<remmina>": "🖥️ ",
+        
+	    "class<VSCode|code-url-handler|code-oss|codium|codium-url-handler|VSCodium>": "󰨞 ",
+        "class<dev.zed.Zed>": "󰵁",
+	    "class<codeblocks>": "󰅩 ",
+	    "title<.*github.*>": " ",
+	    "class<mousepad>": " ",
+	    "class<libreoffice-writer>": " ",
+	    "class<libreoffice-startcenter>": "󰏆 ",
+	    "class<libreoffice-calc>": " ",
+	    "title<.*nvim ~.*>": " ",
+	    "title<.*vim.*>": " ",
+	    "title<.*nvim.*>": " ",
+	    "title<.*figma.*>": " ",
+	    "title<.*jira.*>": " ",
+	    "class<jetbrains-idea>": " ",
+        
+	    "class<obs|com.obsproject.Studio>": " ",
+        
+	    "class<polkit-gnome-authentication-agent-1>": "󰒃 ",
+	    "class<nwg-look>": " ",
+	    "class<[Pp]avucontrol|org.pulseaudio.pavucontrol>": "󱡫 ",
+	    "class<steam>": " ",
+	    "class<thunar|nemo>": "󰝰 ",	
+        "class<Gparted>":"",
+	    "class<gimp>": " ",
+	    "class<emulator>": "📱 ",
+	    "class<android-studio>": " ",
+        "class<org.wireplumber.Helvum>": "󰓃",
+        "class<localsend>":"",
+        "class<PrusaSlicer|UltiMaker-Cura|OrcaSlicer>": "󰹛"
+	}
+
+},
+
+
+
+
+
+
+
+
+
+
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -60,49 +144,8 @@
             "unlocked": ""
         }
     },
-    "hyprland/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "hyprland/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
-    },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 5,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
+
+
     "tray": {
         // "icon-size": 21,
         "spacing": 10
@@ -131,29 +174,8 @@
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
     },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
+
+
     "power-profiles-daemon": {
       "format": "{icon}",
       "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
@@ -165,55 +187,53 @@
         "power-saver": ""
       }
     },
+
    "network": {
         "tooltip-format-ethernet": "{ifname} ↗",
         "interval": 1,
         "format": "↓ {bandwidthDownBits} ↑ {bandwidthUpBits} "
     },
-    "pulseaudio": {
-    "format": "{volume}% {icon}",
-    "format-bluetooth": "{volume}% {icon}",
-    "format-muted": "",
+
+"wireplumber": {
+    "format": "{volume}%  ",
+    "format-muted": "  ",
+    "max-volume": 153,
+    "scroll-step": 5,
+    // Правая кнопка мыши: pavucontrol
+    "on-click-right": "pavucontrol",
+    // Левая кнопка мыши: переключение мута
+    "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle"
+    
+},
+
+"wireplumber#source": {
+    "node-type": "Audio/Source",
+    "format": "{volume}% 󰍬 ",
+    "format-muted": " 󰍭 ",
+    "max-volume": 153,
+    "scroll-step": 5,
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "on-click-right": "pavucontrol"
+},
+
+
+"custom/media": {
+    "format": "{icon} {text}",
+    "return-type": "json",
+    "max-length": 40,
     "format-icons": {
-        "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
-        "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
-        "headphone": "",
-        "hands-free": "",
-        "headset": "",
-        "phone": "",
-        "phone-muted": "",
-        "portable": "",
-        "car": "",
-        "default": ["", ""]
+        "spotify": "",
+        "default": "🎜"
     },
-    "scroll-step": 1,
-    "on-click": "pavucontrol",
-    "ignored-sinks": ["Easy Effects Sink"]
-    },
-    "pulseaudio-microphone": {
-        "format": "{volume}% ",
-        "format-muted": "",
-        "format-icons": {
-                "mic": "🎤",
-                "default": "🎙"
-            },
-        "on-click": "pavucontrol"
-    },
-    "custom/media": {
-        "format": "{icon} {text}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
-    "custom/power": {
-        "format" : "⏻ ",
-        "tooltip": false,
-        "on-click": "exec wlogout -p layer-shell"
-	}
+    "escape": true,
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+},
+
+"custom/power": {
+    "format" : "⏻ ",
+    "tooltip": false,
+    "on-click": "exec wlogout -p layer-shell"
+}
+
 }

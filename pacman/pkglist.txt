@@ -1,5 +1,4 @@
 
-
 base
 #— минимальный набор пакетов, необходимых для базовой установки Arch Linux. Включает системные библиотеки и утилиты, ядро, менеджер пакетов pacman, системные службы и базовые инструменты командной строки.
 base-devel
@@ -89,6 +88,8 @@ thunar-media-tags-plugin
 gvfs
 tumbler
 fastfetch
+noto-fonts-emoji
+noto-fonts-cjk
 
 
 
